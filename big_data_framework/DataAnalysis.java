@@ -3,15 +3,27 @@ public class DataAnalysis{
     public static void main(String [] args){
         ActorDatabase database = new ActorDatabase();
 
-        /*
-         *
-         * ENTER YOUR CODE HERE
-         * database.get(i) // returns the actor at the i-th position
-         * actor.set(3, actor) // sets the actor at position 3 to actor
-         * database.set(i,database.get(i+1)) // sets the actor at the i-th position to the actor at the (i+1) position
-         *
-         */
-        database.print();
 
-    }
-}
+	int j=0;
+	while(j<=database.length() -2){
+	int i=0;
+	while(i<= database.length() -2){
+		Actor merp = database.get(i);
+		Actor lerp = database.get(i+1);
+		int merpMovies=merp.getNumberOfMovies();
+		int lerpMovies= lerp.getNumberOfMovies();
+		if(merpNumberOfMovies<lerpNumberOfMovies){
+			//SWAP FUNCTION
+			Actor temp = merp;
+			database.set(i, lerp);
+			database.set(i+1, temp);		
+		}
+	i=i+1;
+
+	} /* end i while */
+	
+	j=j+1;
+	}/*end j while*/
+        System.out.print();
+
+   }
