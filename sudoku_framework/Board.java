@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class Board{
 
     private final static int [] BOUNDARIES = {2,5,8};
@@ -27,7 +29,7 @@ public class Board{
                 else{  
                     state = State.PERMANENT;
                 }
-                board[i][j] = new Tile(val, state);
+                board[i][j] = new Tile(val, state, counter);
                 ++counter;
             }
         }
@@ -128,6 +130,17 @@ public class Board{
         return this.board[row][col];
     }
 
+    public Tile getTileByCounter(int counter){
+	int row;
+	int col;
+	double d = counter/9;
+	d = Math.floor(d);
+	row=(int)d;
+	col=counter%9;
+	Tile A = getTileAt(row, col);
+	return null;
+	
+    }   
     public void crossOutAt(int row, int col, int val){
         this.board[row][col].crossOut(val);
     }
@@ -228,9 +241,6 @@ public class Board{
                 return false;
             }
 
-            if (!checkColCorrect(i)){
-                return false;
-            }
 
             if (!checkBoxCorrect(i+1)){
                 return false;

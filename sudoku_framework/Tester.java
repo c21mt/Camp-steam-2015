@@ -11,11 +11,12 @@ public class Tester{
         System.out.println(board.toString());
 
         while(!board.finished()){
-            player.computeMove();
+            player.getMoveFromUser();
             row = player.getRowMove();
             col = player.getColMove();
             val = player.getValMove();
             board.setTileAt(row,col,val);
+        System.out.println(board.toString());
         }
         
         System.out.println(board.toString());
